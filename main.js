@@ -45,12 +45,12 @@ const clearFields = () => {
 const saveClient = () => {
     if (isValidFields()){
         const client = {
-            nome: document.getElementById('nome').value,
+            name: document.getElementById('name').value,
             email: document.getElementById('email').value,
-            celular: document.getElementById('celular').value,
-            cidade: document.getElementById('cidade').value
+            cellphone: document.getElementById('cellphone').value,
+            city: document.getElementById('city').value
         }
-        const index = document.getElementById('nome').dataset.index
+        const index = document.getElementById('name').dataset.index
         if (index == 'new') {
             createClient(client)
             updateTable()
@@ -67,13 +67,13 @@ const saveClient = () => {
 const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
-    <td>${client.nome}</td>
+    <td>${client.name}</td>
     <td>${client.email}</td>
-    <td>${client.celular}</td>
-    <td>${client.cidade}</td>
+    <td>${client.cellphone}</td>
+    <td>${client.city}</td>
     <td>
-        <button type="button" class="button green" id="edit-${index}">Editar</button>
-        <button type="button" class="button red" id="delete-${index}">Excluir</button>
+        <button type="button" class="button green" id="edit-${index}">Edit</button>
+        <button type="button" class="button red" id="delete-${index}">Delete</button>
     </td>
     `
     document.querySelector('#tableClient>tbody').appendChild(newRow)
@@ -91,11 +91,11 @@ const updateTable = () => {
 }
 
 const fillFields = (client) => {
-    document.getElementById('nome').value = client.nome
+    document.getElementById('name').value = client.name
     document.getElementById('email').value = client.email
-    document.getElementById('celular').value = client.celular
-    document.getElementById('cidade').value = client.cidade
-    document.getElementById('nome').dataset.index = client.index
+    document.getElementById('cellphone').value = client.cellphone
+    document.getElementById('city').value = client.city
+    document.getElementById('name').dataset.index = client.index
 }
 
 const editClient = (index) => {
@@ -114,7 +114,7 @@ const editDelete = () => {
             editClient(index)
         } else {
             const client = readClient()[index]
-            const response = confirm (`Deseja realmente excluir o cliente ${client.nome}`)
+            const response = confirm (`Do you really wish to delete the client ${client.nome}?`)
             if (response) {
                 deleteClient(index)
                 updateTable()
@@ -126,13 +126,13 @@ const editDelete = () => {
 updateTable()
 
 // Eventos
-document.getElementById('cadastrarCliente')
+document.getElementById('registerClient')
     .addEventListener('click', openModal)
 
 document.getElementById('modalClose')
     .addEventListener('click', closeModal)
 
-document.getElementById('salvar')
+document.getElementById('save')
         .addEventListener('click', saveClient)
 
 document.querySelector('#tableClient>tbody')

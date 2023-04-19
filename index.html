@@ -15,18 +15,18 @@
 </head>
 <body>
     <header>
-        <h1 class="header-title">Cadastro de Clientes</h1>
+        <h1 class="header-title">Customer Registration</h1>
     </header>
     <main>
-        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
+        <button type="button" class="button blue mobile" id="registerClient">Register Customer</button>
         <table id="tableClient" class="records">
             <thead>
                 <tr>
-                    <th>Nome</th>
+                    <th>Name</th>
                     <th>E-mail</th>
-                    <th>Celular</th>
-                    <th>Cidade</th>
-                    <th>Ação</th>
+                    <th>Cellphone number</th>
+                    <th>City</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,24 +65,24 @@
         <div class="modal" id="modal">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h2>Novo Cliente</h2>
+                    <h2>New Customer</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Cliente" required>
-                    <input type="email" id="email" class="modal-field" placeholder="e-mail do Cliente" required>
-                    <input type="text" id="celular" class="modal-field" placeholder="Celular do Cliente" required>
-                    <input type="text" id="cidade" class="modal-field" placeholder="Cidade do Cliente" required>
+                    <input type="text" id="name" data-index="new" class="modal-field" placeholder="Client name" required>
+                    <input type="email" id="email" class="modal-field" placeholder="Cliente email" required>
+                    <input type="text" id="cellphone" class="modal-field" placeholder="Client cellphone number" required>
+                    <input type="text" id="city" class="modal-field" placeholder="Client city" required>
                 </form>
                 <footer class="modal-footer">
-                    <button id="salvar" class="button green">Salvar</button>
-                    <button id="cancelar" class="button blue">Cancelar</button>
+                    <button id="save" class="button green">Save</button>
+                    <button id="cancel" class="button blue">Cancel</button>
                 </footer>
             </div>
         </div>
     </main>
     <footer>
-        Criado por &copy; Leonardo Gama
+        Created by &copy; Leonardo Gama
     </footer>
 </body>
 </html>
